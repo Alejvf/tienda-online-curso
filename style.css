@@ -21,6 +21,10 @@ html {
     font-size: 62.5%;
 }
 
+.inactive {
+    display: none;
+}
+
 .new_password, .password_recovery2, .login, .create_account, .my_account{
     width: 100%;
     height: 100vh;
@@ -169,6 +173,7 @@ html {
     grid-template-columns: repeat(auto-fill, 240px);
     place-content: center;
     grid-gap: 15px;
+    padding: 20px;
 }
 
 .home1 .product-card{
@@ -209,6 +214,10 @@ html {
 }
 
 .desktop-menu {
+    position: absolute;
+    background-color: var(--white);
+    top: 60px;
+    right: 60px;
     width: 140px;
     height: auto;
     border: 1px solid var(--very-light-pink);
@@ -250,6 +259,12 @@ html {
 
 .mobile-menu{
     padding: 24px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background-color: var(--white);
+    width: 100%;
 }
 
 .mobile-menu a {
@@ -284,7 +299,7 @@ html {
 }
 
 .mobile-menu ul:nth-child(3) {
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
@@ -440,10 +455,12 @@ nav .navbar-right .navbar-email{
     color: var(--very-light-pink);
     font-size: var(--sm);
     margin-right: 12px;
+    cursor: pointer;
 }
 
 nav .navbar-right .navbar-shopping-cart{
     position: relative;
+    cursor: pointer;
 }
 
 nav .navbar-right .navbar-shopping-cart div{
@@ -464,6 +481,7 @@ nav .navbar-right .navbar-shopping-cart div{
     padding-bottom: 24px;
     position: absolute;
     right: 0;
+    background-color: var(--white);
 }
 
 .product-details .product-details-info .product-details-close {
@@ -528,11 +546,11 @@ nav .navbar-right .navbar-shopping-cart div{
 
 .shopping-cart1 {
     width: 320px;
-    height: 100vh;
-    display: grid;
     grid-template-rows: auto 1fr auto auto;
     position: absolute;
     right: 0;
+    background-color: var(--white);
+    padding: 10px;
 }
 
 .shopping-cart1 .title-container {
@@ -552,7 +570,7 @@ nav .navbar-right .navbar-shopping-cart div{
 .shopping-cart-content {
     height: 100%;
     width: 100%;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     padding-top: 15px;
 }
 
@@ -560,11 +578,18 @@ nav .navbar-right .navbar-shopping-cart div{
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 16px;
-    align-items: center;
     background-color: var(--text-input-field);
     margin-bottom: 24px;
     border-radius: 8px;
-    padding: 12px 24px 0 24px;
+    padding: 12px 24px 12px 24px;
+    height: auto;
+}
+
+.shopping-cart1 .shopping-cart-botton {
+    background-color: var(--white);
+    width: 100%;
+    padding: 10px;
+    margin: 0;
 }
 
 .shopping-cart-botton .shopping-cart-total p:nth-child(1) {
@@ -652,6 +677,7 @@ nav .navbar-right .navbar-shopping-cart div{
     }
 
     nav .menu {
+        cursor: pointer;
         display: block;
         width: 16px;
         height: 16px;
@@ -669,11 +695,21 @@ nav .navbar-right .navbar-shopping-cart div{
         justify-content: center;
     }
 
+    .desktop-menu{
+        display: none;
+    }
+
     .product-details{
         width: 100%;
     }
 
     .shopping-cart1 {
         width: 100%;
+    }
+}
+
+@media (min-width: 641px) {
+    .mobile-menu {
+        display: none;
     }
 }
